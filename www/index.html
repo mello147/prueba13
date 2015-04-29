@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InAppBrowser.addEventListener Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+         var ref = window.open('http://evaco.co', '_self', 'location=no');
+         ref.addEventListener('loadstart', function(event) { console.log(event.type + ' - ' + event.url); } );
+		ref.addEventListener('loadstop', function(event) { console.log(event.type + ' - ' + event.url); } );
+		ref.addEventListener('exit', function(event) { console.log(event.type); } );
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
